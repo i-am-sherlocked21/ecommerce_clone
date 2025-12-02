@@ -1,0 +1,23 @@
+{
+  "name": "BabyBliss - Baby Products Store (Demo)",
+  "short_name": "BabyBliss",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFE4F0",
+  "theme_color": "#FF7AB6",
+  "description": "Demo-only mini e-commerce PWA for baby products.",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/3065/3065493.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/3065/3065493.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
+
+
