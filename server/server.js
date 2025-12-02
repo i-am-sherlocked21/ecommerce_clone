@@ -11,9 +11,13 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 const MONGO_URI =
-  process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/babybliss_demo';
+  process.env.MONGO_URI || 'mongodb://localhost:27017/babybliss_demo';
 
-app.use(cors());
+// CORS configuration for production
+app.use(cors({
+  origin: process.env.FRONTEND_URL || '*',
+  credentials: true
+}));
 app.use(express.json());
 
 app.get('/', (req, res) => {

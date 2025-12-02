@@ -1,11 +1,11 @@
 ## BabyBliss – MERN Demo Baby Products Store
 
 BabyBliss is a **demo-only mini e-commerce** web app for baby products, inspired by FirstCry.
-It’s built as a **MERN + PWA** project with pastel UI, cart, dummy login, and local notifications.
+It's built as a **MERN + PWA** project with pastel UI, cart, dummy login, and local notifications.
 
 ### Tech Stack
 
-- **Frontend**: React + Vite, Tailwind CSS, Framer Motion
+- **Frontend**: React + Vite, Tailwind CSS, Framer Motion, React Hot Toast
 - **Backend**: Node.js, Express.js, MongoDB + Mongoose, JWT (demo user only)
 - **PWA**: `manifest.json`, `service-worker.js`, local notification demo
 
@@ -71,7 +71,7 @@ Backend will start at `http://localhost:5000`:
 - `GET /api/products/:id` – single product
 - `POST /api/auth/login` – demo login (returns JWT)
 
-The first run seeds MongoDB with 3 demo products.
+The first run seeds MongoDB with 6 demo products.
 
 ---
 
@@ -93,13 +93,15 @@ Open it in a **modern desktop or mobile browser** (Chrome recommended for PWA).
 
 - **Home Page**
   - Hero banner with pastel gradient and CTA
-  - Category cards: **Bath, Toys, Skincare** (click to filter)
+  - Category cards: **All, Bath, Toys, Skincare** (click to filter)
   - Product grid loaded from `/api/products` (falls back to local demo data if backend is off)
-  - Click a product card to open a **product modal** with full details + “Add to Cart”
+  - Click a product card to open a **product modal** with full details + "Add to Cart"
+  - "Send Notification" button for PWA demo
 
 - **Cart Page**
   - Persistent cart (React Context + `localStorage`)
   - Increment / decrement quantity, remove item, clear cart
+  - Toast notifications when adding items
   - Demo checkout button (no real payment)
 
 - **Dummy Login**
@@ -111,12 +113,22 @@ Open it in a **modern desktop or mobile browser** (Chrome recommended for PWA).
     ```
 
   - Sends `POST /api/auth/login`, receives JWT and stores it in `localStorage`
+  - Login button disappears after successful login
 
 - **PWA & Notifications**
   - `manifest.json` + `service-worker.js` registered in `main.jsx`
   - On supported browsers, you can **install** BabyBliss as an app
-  - On the home page, click **“Send Notification”** to trigger a local notification
-    (you’ll be asked for notification permission first)
+  - On the home page, click **"Send Notification"** to trigger a local notification
+    (you'll be asked for notification permission first)
+
+---
+
+### 🚀 Deployment
+
+See **[DEPLOYMENT.md](./DEPLOYMENT.md)** for step-by-step instructions to deploy to:
+- **Frontend**: Vercel
+- **Backend**: Render
+- **Database**: MongoDB Atlas
 
 ---
 
@@ -125,5 +137,3 @@ Open it in a **modern desktop or mobile browser** (Chrome recommended for PWA).
 - This is a **demo / learning project**: no real users, no real orders, no payments.
 - You can customize product data via MongoDB or by editing the seed data in `server/server.js`.
 - Icons in `client/public/icons` are placeholders – replace them with real PNGs for production.
-
-
