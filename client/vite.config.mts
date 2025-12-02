@@ -6,8 +6,13 @@ export default defineConfig({
   server: {
     port: 5173,
     proxy: {
-      '/api': 'https://ecommerce-clone-2.onrender.com/'
+      '/api': 'http://localhost:5000'
     }
+  },
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    sourcemap: false
   }
 });
 
